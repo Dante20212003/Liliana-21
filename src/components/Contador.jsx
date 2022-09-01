@@ -36,7 +36,7 @@ const Contador = ({ seconds }) => {
         </div>
       </div>
 
-      <h3>Segundos Juntos :D</h3>
+      <h3>Segundos Juntos ❤️</h3>
       {numberWithCommas(seconds)}
     </div>
   );
