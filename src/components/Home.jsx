@@ -37,7 +37,7 @@ const Home = () => {
   }, 1000);
   return (
     <>
-      <h1 style={{ textAlign: "center", marginBottom: "2rem" }}>
+      <h1 style={{ textAlign: "center", marginBottom: "4rem" }}>
         Bienvenida Puerca 🐽
       </h1>
 

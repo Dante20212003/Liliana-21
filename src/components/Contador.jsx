@@ -13,7 +13,7 @@ const Contador = ({ seconds }) => {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
   }
   return (
-    <div style={{ textAlign: "center", marginBottom: "3rem" }}>
+    <div style={{ textAlign: "center", marginBottom: "4rem" }}>
       <div className="container-contador">
         <div className="contador-flex">
           <p className="anio-num">1</p>
