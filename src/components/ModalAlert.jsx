@@ -28,8 +28,10 @@ export const ModalAlert = ({
     if (img != "amor") {
       if (img != "grita") clearErrors();
       else handleAlerta();
+    } else {
+      setAutoPlayCarou(true);
     }
-    setAutoPlayCarou(true);
+
     handleModalBien(false);
 
     setOpen(false);

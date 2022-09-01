@@ -59,7 +59,7 @@ const Propuesta = () => {
         </DialogActions>
       </Dialog>
 
-      <h2 style={{ textAlign: "center" }}>Deseas otros mes juntos :)?</h2>
+      <h2 style={{ textAlign: "center" }}>Vamos por otro mes juntos :)?</h2>
 
       <div className="buttons-flex">
         <Button

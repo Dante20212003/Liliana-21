@@ -6,22 +6,49 @@ import CarouselComp from "./CarouselComp";
 import useAudio from "../utils/useAudio";
 import useAppContext from "../hooks/useAppContext";
 import Contador from "./Contador";
+import { useEffect, useState } from "react";
+import dayjs from "dayjs";
+const getSeconsDiff = () => {
+  const fechaInicio = new dayjs("12-02-2020");
+  const fechaActual = new dayjs();
 
+  const difference = fechaActual.diff(fechaInicio, "s");
+  return difference;
+};
 const Home = () => {
   const router = useNavigate();
   const [playing, toggle] = useAudio("rioroma2.mp3");
+  const [seconds, setSeconds] = useState(getSeconsDiff());
 
   const handleMusic = () => {
     toggle();
   };
 
+  /*   const getSeconsDiff = () => {
+    const fechaInicio = new dayjs("12-02-2020");
+    const fechaActual = new dayjs();
+
+    const difference = fechaActual.diff(fechaInicio, "s");
+    setSeconds(difference);
+  };
+ */
+  const test = () => {
+    console.log(seconds);
+    setSeconds(seconds + 1);
+  };
+
+  useEffect(() => {}, []);
+
+  setTimeout(() => {
+    test();
+  }, 1000);
   return (
     <>
       <h1 style={{ textAlign: "center", marginBottom: "2rem" }}>
         Bienvenida Puerca 🐽
       </h1>
 
-      <Contador />
+      <Contador seconds={seconds} />
 
       <CarouselComp />
 

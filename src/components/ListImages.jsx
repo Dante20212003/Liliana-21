@@ -38,12 +38,13 @@ const ListImages = () => {
         </h1>
 
         <Button
+          variant="outlined"
           style={{}}
           onClick={() => {
             router("/");
           }}
         >
-          {"Ver Fotitos :)"}
+          {"Inicio"}
         </Button>
       </div>
 
@@ -57,6 +58,7 @@ const ListImages = () => {
         style={{ position: "fixed", bottom: 0, right: 0, marginBottom: "1rem" }}
         /* style={{ marginTop: "15rem" }} */
         variant="contained"
+        color="warning"
         onClick={() => {
           router("/propuesta");
         }}
