@@ -1,0 +1,65 @@
+/* .card {
+    margin-bottom: 10rem;
+    background-color: #fff;
+    padding: 2rem;
+    box-shadow: 5px 3px 34px 3px rgba(0, 0, 0, 0.42);
+    -webkit-box-shadow: 5px 3px 34px 3px rgba(0, 0, 0, 0.42);
+    -moz-box-shadow: 5px 3px 34px 3px rgba(0, 0, 0, 0.42);
+    border-radius: 10px;
+    text-align: center;
+    width: 70%;
+    margin-bottom: 50rem;
+    transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s;
+    transform: translateY(500px);
+}
+
+.card img {
+    border-radius: 5px;
+
+    width: 100%;
+}
+
+.test {
+    transform: rotate(10deg);
+} */
+
+.card {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 0 1px hsl(0deg 0% 0% / 0.075), 0 0 2px hsl(0deg 0% 0% / 0.075),
+        0 0 4px hsl(0deg 0% 0% / 0.075), 0 0 8px hsl(0deg 0% 0% / 0.075),
+        0 0 16px hsl(0deg 0% 0% / 0.075);
+
+    margin: 0 auto;
+}
+
+.card img {
+    width: 200px;
+    height: 355px;
+    border-radius: 10px;
+    object-fit: cover;
+    object-position: center;
+
+}
+
+
+
+.card-container {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding-top: 20px;
+    margin-bottom: -120px;
+}
+
+.testOverlay {
+    background-color: red;
+    width: 100px;
+    height: 200px;
+}

@@ -1,0 +1,28 @@
+:root {
+    font-family: 'Roboto';
+}
+
+
+img {
+    width: 90%;
+}
+
+body {
+    padding-bottom: 300px;
+}
+
+
+
+@media (min-width: 550px) {
+    .list-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 750px) {
+    .list-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

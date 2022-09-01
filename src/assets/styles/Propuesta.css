@@ -1,0 +1,20 @@
+.buttons-flex {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.btn-si {
+
+
+    position: absolute !important;
+    top: 15% !important;
+    left: 60% !important;
+}
+
+.btn-no {
+    position: absolute !important;
+    top: 15%;
+    right: 60%;
+}
