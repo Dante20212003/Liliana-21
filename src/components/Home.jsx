@@ -8,6 +8,7 @@ import useAppContext from "../hooks/useAppContext";
 import Contador from "./Contador";
 import { useEffect, useState } from "react";
 import dayjs from "dayjs";
+
 const getSeconsDiff = () => {
   const fechaInicio = new dayjs("12-02-2020");
   const fechaActual = new dayjs();
@@ -15,6 +16,7 @@ const getSeconsDiff = () => {
   const difference = fechaActual.diff(fechaInicio, "s");
   return difference;
 };
+
 const Home = () => {
   const router = useNavigate();
   const [playing, toggle] = useAudio("rioroma2.mp3");
@@ -24,16 +26,7 @@ const Home = () => {
     toggle();
   };
 
-  /*   const getSeconsDiff = () => {
-    const fechaInicio = new dayjs("12-02-2020");
-    const fechaActual = new dayjs();
-
-    const difference = fechaActual.diff(fechaInicio, "s");
-    setSeconds(difference);
-  };
- */
   const test = () => {
-    console.log(seconds);
     setSeconds(seconds + 1);
   };
 

@@ -1,6 +1,14 @@
+import dayjs from "dayjs";
 import "../assets/styles/Contador.css";
 
 const Contador = ({ seconds }) => {
+  const getDiffTime = (val) => {
+    const fechaInicio = new dayjs("12-02-2020");
+    const fechaActual = new dayjs();
+
+    const difference = fechaActual.diff(fechaInicio, val);
+    return difference;
+  };
   function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
   }
@@ -17,22 +25,22 @@ const Contador = ({ seconds }) => {
       <div className="contador-grid">
         <div className="animar-contador">
           <p>Dias</p>
-          <span>639</span>
+          <span>{getDiffTime("d")}</span>
         </div>
 
         <div className="animar-contador">
           <p>Horas</p>
-          <span>15336</span>
+          <span>{getDiffTime("h")}</span>
         </div>
 
         <div className="animar-contador">
           <p>Semanas</p>
-          <span>91</span>
+          <span>{getDiffTime("w")}</span>
         </div>
 
         <div className="animar-contador">
           <p>Meses</p>
-          <span>21</span>
+          <span>{getDiffTime("M")}</span>
         </div>
       </div>
 

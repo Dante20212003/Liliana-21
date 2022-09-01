@@ -26,7 +26,6 @@ const Propuesta = () => {
   const noQuiere = () => {
     const x = Math.round(Math.random() * 80);
     const y = Math.round(Math.random() * 80);
-    console.log({ x, y });
     ref.current.style.position = "absolute !important";
     ref.current.style.top = x + "%";
     ref.current.style.right = x + "%";
