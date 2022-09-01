@@ -1,8 +1,11 @@
 import "../assets/styles/Contador.css";
 
-const Contador = () => {
+const Contador = ({ seconds }) => {
+  function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  }
   return (
-    <div style={{ textAlign: "center", marginBottom: "5rem" }}>
+    <div style={{ textAlign: "center", marginBottom: "3rem" }}>
       <div className="container-contador">
         <div className="contador-flex">
           <p className="anio-num">1</p>
@@ -32,6 +35,9 @@ const Contador = () => {
           <span>21</span>
         </div>
       </div>
+
+      <h3>Segundos Juntos :D</h3>
+      {numberWithCommas(seconds)}
     </div>
   );
 };
