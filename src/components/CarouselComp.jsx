@@ -31,7 +31,7 @@ const Item = ({ url, body }) => {
           <motion.div
             initial="offscreen"
             whileInView="onscreen"
-            viewport={{ once: false, amount: 1 }}
+            viewport={{ once: false, amount: 0.5 }}
           >
             <motion.p variants={carouselVariants}>{body}</motion.p>
           </motion.div>

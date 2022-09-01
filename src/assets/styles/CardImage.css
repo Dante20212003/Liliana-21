@@ -58,6 +58,16 @@
     margin-bottom: -120px;
 }
 
+.card:nth-child(even) {
+    background-color: blue;
+}
+
+/* .card:hover {
+
+    background-color: red;
+    transform: translateY(50px) rotate(10deg) translateZ(0px) scale(1.4) !important;
+} */
+
 .testOverlay {
     background-color: red;
     width: 100px;

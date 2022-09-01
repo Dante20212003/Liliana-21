@@ -50,10 +50,10 @@ const Home = () => {
         fullWidth
         style={{ marginTop: "2rem" }}
         onClick={() => {
-          router("/galeria");
+          router("/propuesta");
         }}
       >
-        {"Ver Fotitos :)"}
+        {"Click Aqui :)"}
       </Button>
 
       <ModalForm handleMusic={handleMusic} />

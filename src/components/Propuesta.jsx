@@ -12,6 +12,7 @@ import {
 } from "@mui/material";
 import { forwardRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const Transition = forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -19,11 +20,15 @@ const Transition = forwardRef(function Transition(props, ref) {
 
 const Propuesta = () => {
   const [alerta, setAlerta] = useState(false);
+  const [contador, setContador] = useState(0);
+  const [alertaEnojado, setAlertaEnojado] = useState(false);
+
   const router = useNavigate();
 
   const ref = useRef();
 
   const noQuiere = () => {
+    setContador(contador + 1);
     const x = Math.round(Math.random() * 80);
     const y = Math.round(Math.random() * 80);
     ref.current.style.position = "absolute !important";
@@ -31,13 +36,32 @@ const Propuesta = () => {
     ref.current.style.right = x + "%";
   };
 
+  useEffect(() => {
+    if (contador % 3 === 0 && contador != 0) setAlertaEnojado(true);
+    return;
+  }, [contador]);
+
   return (
     <>
+      <Dialog
+        open={alertaEnojado}
+        TransitionComponent={Transition}
+        keepMounted
+        onClose={() => setAlertaEnojado(false)}
+        aria-describedby="alert-dialog-slide-description"
+      >
+        <DialogTitle>Umm...</DialogTitle>
+        <DialogContent>
+          <div style={{ textAlign: "center" }}>
+            <img src="flork/flork-gun.png" style={{ width: "300px" }} />
+          </div>
+        </DialogContent>
+      </Dialog>
+
       <Dialog
         open={alerta}
         TransitionComponent={Transition}
         keepMounted
-        onClose={() => setAlerta(false)}
         aria-describedby="alert-dialog-slide-description"
       >
         <DialogTitle>Gracias</DialogTitle>
@@ -54,7 +78,14 @@ const Propuesta = () => {
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={() => setAlerta(false)}>OK</Button>
+          <Button
+            onClick={() => {
+              setAlerta(false);
+              router("/galeria");
+            }}
+          >
+            SHIII
+          </Button>
         </DialogActions>
       </Dialog>
 
@@ -78,10 +109,9 @@ const Propuesta = () => {
           No
         </Button>
       </div>
-
+      {/* 
       <Button
         style={{ position: "fixed", bottom: 0, right: 0, marginBottom: "1rem" }}
-        /* style={{ marginTop: "15rem" }} */
         variant="contained"
         color="warning"
         onClick={() => {
@@ -89,7 +119,7 @@ const Propuesta = () => {
         }}
       >
         Regresar
-      </Button>
+      </Button> */}
     </>
   );
 };

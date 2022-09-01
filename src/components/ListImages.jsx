@@ -33,8 +33,8 @@ const ListImages = () => {
           justifyContent: "space-between",
         }}
       >
-        <h1 style={{ textAlign: "center", fontSize: "1rem" }}>
-          Galeria de Fotos Juntos 💑
+        <h1 style={{ textAlign: "center", fontSize: "1.4rem" }}>
+          Galeria de Fotos 💑
         </h1>
 
         <Button
@@ -54,9 +54,8 @@ const ListImages = () => {
         ))}
       </div>
 
-      <Button
+      {/* <Button
         style={{ position: "fixed", bottom: 0, right: 0, marginBottom: "1rem" }}
-        /* style={{ marginTop: "15rem" }} */
         variant="contained"
         color="warning"
         onClick={() => {
@@ -64,7 +63,7 @@ const ListImages = () => {
         }}
       >
         {"Click Aqui"}
-      </Button>
+      </Button> */}
     </>
   );
 };

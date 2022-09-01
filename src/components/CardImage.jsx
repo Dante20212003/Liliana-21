@@ -1,8 +1,9 @@
 import { motion, useAnimation, useInView } from "framer-motion";
 import Image from "../assets/images/12.jpg";
 import "../assets/styles/CardImage.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRef } from "react";
+import { Dialog } from "@mui/material";
 
 const x = () => (
   <div ref={ref} className="card">
@@ -13,6 +14,8 @@ const x = () => (
 );
 
 const CardImage = ({ url, indice }) => {
+  const [open, setOpen] = useState(false);
+
   const cardVariants = {
     offscreen: {
       y: 300,
@@ -26,19 +29,39 @@ const CardImage = ({ url, indice }) => {
         duration: 0.8,
       },
     },
+    hover: {
+      scale: 1.2,
+    },
   };
 
   return (
-    <motion.div
-      className="card-container"
-      initial="offscreen"
-      whileInView="onscreen"
-      viewport={{ once: true, amount: 1 }}
-    >
-      <motion.div className="card" variants={cardVariants}>
-        <img src={`images/${url}.jpg`} alt="" />
+    <>
+      <motion.div
+        className="card-container"
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true, amount: 0.5 }}
+        whileHover="hover"
+      >
+        <motion.div
+          className="card"
+          variants={cardVariants}
+          onClick={() => {
+            setOpen(true);
+          }}
+        >
+          <img src={`images/${url}.jpg`} alt="" />
+        </motion.div>
       </motion.div>
-    </motion.div>
+
+      <Dialog open={open} onClose={() => setOpen(false)}>
+        <img
+          src={`images/${url}.jpg`}
+          alt=""
+          style={{ width: "100%", height: "550px", objectFit: "cover" }}
+        />
+      </Dialog>
+    </>
   );
 };
 
