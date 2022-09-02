@@ -27,8 +27,13 @@ const initialError = {
 };
 
 const ModalForm = ({ handleMusic }) => {
-  const { modalFormOpen, handleModalForm, modalBien, handleModalBien } =
-    useAppContext();
+  const {
+    modalFormOpen,
+    handleModalForm,
+    modalBien,
+    handleModalBien,
+    fixMusic,
+  } = useAppContext();
   const [fecha, setFecha] = useState(null);
   const [meses, setMeses] = useState("");
   const [error, setError] = useState(initialError);
@@ -61,6 +66,7 @@ const ModalForm = ({ handleMusic }) => {
           img: "enojado",
         });
       } else {
+        localStorage.setItem("completado", true);
         handleModalBien(true);
         handleMusic();
         handleModalForm();
@@ -73,7 +79,12 @@ const ModalForm = ({ handleMusic }) => {
   return (
     <>
       {modalBien && (
-        <ModalAlert message="Sabia que podrias" tipo="Muy bien" img="amor" />
+        <ModalAlert
+          message={fixMusic ? "" : "Sabia que podrias"}
+          tipo={fixMusic ? "Holii" : "Muy bien"}
+          img="amor"
+          handleMusic={handleMusic}
+        />
       )}
 
       {error.message.length > 0 && (

@@ -31,10 +31,11 @@ const ListImages = () => {
         style={{
           display: "flex",
           justifyContent: "space-between",
+          marginTop: "1rem",
         }}
       >
-        <h1 style={{ textAlign: "center", fontSize: "1.4rem" }}>
-          Galeria de Fotos 💑
+        <h1 style={{ textAlign: "center", fontSize: "1.4rem", margin: 0 }}>
+          Fotos Juntos 💑
         </h1>
 
         <Button

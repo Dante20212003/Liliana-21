@@ -1,13 +1,24 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
+import useAudio from "../utils/useAudio";
 
 const AppContext = createContext();
 
 const AppProvider = ({ children }) => {
-  const [modalFormOpen, setModalFormOpen] = useState(true);
-  const [modalHomeOpen, setModalHomeOpen] = useState(true);
+  const [playing, toggle] = useAudio("rioroma2.mp3");
 
-  const [modalBien, setModalBien] = useState(false);
+  const [modalFormOpen, setModalFormOpen] = useState(
+    localStorage.getItem("completado") == "true" ? false : true
+  );
+  const [modalHomeOpen, setModalHomeOpen] = useState(
+    localStorage.getItem("completado") == "true" ? false : true
+  );
+
+  const [modalBien, setModalBien] = useState(
+    localStorage.getItem("completado") == "true" ? true : false
+  );
   const [autoPlayCarou, setAutoPlayCarou] = useState(false);
+
+  const [fixMusic, setFixMusic] = useState(false);
 
   const handleModalForm = () => {
     setModalFormOpen(!modalFormOpen);
@@ -21,6 +32,18 @@ const AppProvider = ({ children }) => {
     setModalBien(val);
   };
 
+  useEffect(() => {
+    if (localStorage.getItem("completado") == "true") {
+      localStorage.getItem("completado") == "true" && setFixMusic(true);
+      /*  setModalBien(true);
+
+      setFixMusic(true);
+      setTimeout(() => {
+        toggle();
+      }, 3000); */
+    }
+  }, []);
+
   return (
     <AppContext.Provider
       value={{
@@ -32,6 +55,7 @@ const AppProvider = ({ children }) => {
         handleModalBien,
         autoPlayCarou,
         setAutoPlayCarou,
+        fixMusic,
       }}
     >
       {children}

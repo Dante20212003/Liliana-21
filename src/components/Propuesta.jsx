@@ -9,6 +9,7 @@ import {
   DialogContentText,
   DialogTitle,
   Slide,
+  Typography,
 } from "@mui/material";
 import { forwardRef } from "react";
 import { useNavigate } from "react-router-dom";
@@ -67,14 +68,16 @@ const Propuesta = () => {
         <DialogTitle>Gracias</DialogTitle>
         <DialogContent>
           <div style={{ textAlign: "center" }}>
-            <img src="flork/flork-amor.jpg" style={{ width: "300px" }} />
+            <img src="flork/ambos.png" style={{ width: "300px" }} />
           </div>
 
           <DialogContentText style={{ marginTop: "20px" }}>
-            <div>
-              <p>Sabia que dirias que si :")</p>
-              <p>Vamos juntos hasta el fin Puerca hermosa. TE AMO ❤️</p>
-            </div>
+            Sabia que dirias que si
+            <br />
+            <br />
+            Vamos juntos hasta el fin Puerca hermosa.
+            <br />
+            <br /> TE AMO ❤️
           </DialogContentText>
         </DialogContent>
         <DialogActions>

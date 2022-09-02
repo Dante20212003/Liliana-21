@@ -9,6 +9,7 @@ import {
   Slide,
 } from "@mui/material";
 import useAppContext from "../hooks/useAppContext";
+import useAudio from "../utils/useAudio";
 
 const Transition = forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -20,11 +21,16 @@ export const ModalAlert = ({
   clearErrors,
   img,
   handleAlerta,
+  handleMusic,
 }) => {
   const [open, setOpen] = useState(true);
-  const { handleModalBien, setAutoPlayCarou } = useAppContext();
+  const { handleModalBien, setAutoPlayCarou, fixMusic } = useAppContext();
 
   const handleClose = () => {
+    if (fixMusic) {
+      handleMusic();
+    }
+
     if (img != "amor") {
       if (img != "grita") clearErrors();
       else handleAlerta();

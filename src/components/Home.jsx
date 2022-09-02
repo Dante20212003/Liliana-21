@@ -18,6 +18,8 @@ const getSeconsDiff = () => {
 };
 
 const Home = () => {
+  const { fixMusic } = useAppContext();
+
   const router = useNavigate();
   const [playing, toggle] = useAudio("rioroma2.mp3");
   const [seconds, setSeconds] = useState(getSeconsDiff());
@@ -30,13 +32,14 @@ const Home = () => {
     setSeconds(seconds + 1);
   };
 
-  useEffect(() => {}, []);
-
   setTimeout(() => {
     test();
   }, 1000);
   return (
     <>
+      {fixMusic && (
+        <h3 style={{ position: "absolute", display: "none" }}>FIX AUDIO</h3>
+      )}
       <h1 style={{ textAlign: "center", marginBottom: "4rem" }}>
         Bienvenida Puerca 🐽
       </h1>

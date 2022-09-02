@@ -4,7 +4,9 @@ const useAudio = url => {
     const audio = useMemo(() => new Audio(url), []);
     const [playing, setPlaying] = useState(false);
 
-    const toggle = () => setPlaying(!playing);
+    const toggle = () => {
+        setPlaying(!playing)
+    };
 
     useEffect(() => {
         if (playing) {

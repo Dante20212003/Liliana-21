@@ -1,4 +1,5 @@
 import { Container } from "@mui/material";
+import { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "./components/Home";
@@ -7,6 +8,12 @@ import Propuesta from "./components/Propuesta";
 import { AppProvider } from "./context/AppProvider";
 
 function App() {
+  useEffect(() => {
+    if (!localStorage.getItem("completado")) {
+      localStorage.setItem("completado", false);
+    }
+  }, []);
+
   return (
     <AppProvider>
       <Container maxWidth="md">
