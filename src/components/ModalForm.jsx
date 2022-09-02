@@ -80,8 +80,12 @@ const ModalForm = ({ handleMusic }) => {
     <>
       {modalBien && (
         <ModalAlert
-          message={fixMusic ? "" : "Sabia que podrias"}
-          tipo={fixMusic ? "Holii" : "Muy bien"}
+          message={
+            fixMusic
+              ? "Ya pusiste las claves puedes continuar."
+              : "Sabia que podrias"
+          }
+          tipo={fixMusic ? "Bienvenida" : "Muy bien"}
           img="amor"
           handleMusic={handleMusic}
         />
