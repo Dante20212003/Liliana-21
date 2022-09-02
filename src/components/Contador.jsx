@@ -1,7 +1,13 @@
 import dayjs from "dayjs";
+import { useEffect, useState } from "react";
 import "../assets/styles/Contador.css";
 
 const Contador = ({ seconds }) => {
+  const [dataDate, setDataDate] = useState({
+    years: "",
+    months: "",
+  });
+
   const getDiffTime = (val) => {
     const fechaInicio = new dayjs("12-02-2020");
     const fechaActual = new dayjs();
@@ -9,17 +15,37 @@ const Contador = ({ seconds }) => {
     const difference = fechaActual.diff(fechaInicio, val);
     return difference;
   };
-  function numberWithCommas(x) {
+
+  const numberWithCommas = (x) => {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-  }
+  };
+
+  useEffect(() => {
+    const fechaInicio = new dayjs("12-02-2020");
+    const fechaActual = new dayjs();
+
+    let years = 0;
+    let months = fechaActual.diff(fechaInicio, "M");
+
+    while (months >= 12) {
+      months -= 12;
+      years++;
+    }
+
+    setDataDate({
+      years,
+      months,
+    });
+  }, []);
+
   return (
     <div style={{ textAlign: "center", marginBottom: "4rem" }}>
       <div className="container-contador">
         <div className="contador-flex">
-          <p className="anio-num">1</p>
+          <p className="anio-num">{dataDate.years}</p>
           <p className="anio-text">año</p>
         </div>
-        <p className="meses-container">9 meses</p>
+        <p className="meses-container">{dataDate.months} meses</p>
       </div>
 
       <div className="contador-grid">
