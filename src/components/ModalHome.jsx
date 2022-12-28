@@ -42,7 +42,7 @@ export const ModalHome = () => {
         />
       )}
 
-      <Dialog
+      {/* <Dialog
         open={modalHomeOpen}
         TransitionComponent={Transition}
         keepMounted
@@ -58,7 +58,7 @@ export const ModalHome = () => {
           <Button onClick={handleNoQuiere}>No Quiero</Button>
           <Button onClick={handleClose}>Continuar</Button>
         </DialogActions>
-      </Dialog>
+      </Dialog> */}
     </>
   );
 };

@@ -35,7 +35,7 @@ const ListImages = () => {
         }}
       >
         <h1 style={{ textAlign: "center", fontSize: "1.4rem", margin: 0 }}>
-          Fotos Juntos 💑
+          Fotos Juntos???
         </h1>
 
         <Button

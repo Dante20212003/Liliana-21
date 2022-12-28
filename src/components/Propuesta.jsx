@@ -65,19 +65,19 @@ const Propuesta = () => {
         keepMounted
         aria-describedby="alert-dialog-slide-description"
       >
-        <DialogTitle>Gracias</DialogTitle>
+        <DialogTitle>Bien</DialogTitle>
         <DialogContent>
           <div style={{ textAlign: "center" }}>
             <img src="flork/ambos.png" style={{ width: "300px" }} />
           </div>
 
           <DialogContentText style={{ marginTop: "20px" }}>
-            Sabia que dirias que si
+            Sabia que dirias que no
             <br />
             <br />
-            Vamos juntos hasta el fin Puerca hermosa.
+            Vamos juntos hasta el fin Puerca hermosa.???????????
             <br />
-            <br /> TE AMO ❤️
+            <br /> TE A
           </DialogContentText>
         </DialogContent>
         <DialogActions>
@@ -87,27 +87,27 @@ const Propuesta = () => {
               router("/galeria");
             }}
           >
-            SHIII
+            mm
           </Button>
         </DialogActions>
       </Dialog>
 
-      <h2 style={{ textAlign: "center" }}>Vamos por otro mes juntos :)?</h2>
+      <h2 style={{ textAlign: "center" }}>Vamos por otro mes juntos..?/</h2>
 
       <div className="buttons-flex">
-        <Button
-          onClick={() => setAlerta(true)}
-          variant="contained"
-          className="btn-si"
-        >
-          Si
-        </Button>
         <Button
           ref={ref}
           onClick={noQuiere}
           variant="contained"
-          color="error"
           className="btn-no"
+        >
+          Si
+        </Button>
+        <Button
+          onClick={() => setAlerta(true)}
+          variant="contained"
+          color="error"
+          className="btn-si"
         >
           No
         </Button>

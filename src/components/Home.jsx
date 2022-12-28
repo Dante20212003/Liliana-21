@@ -21,7 +21,7 @@ const Home = () => {
   const { fixMusic } = useAppContext();
 
   const router = useNavigate();
-  const [playing, toggle] = useAudio("rioroma2.mp3");
+  const [playing, toggle] = useAudio("romantichomicida.mp3");
   const [seconds, setSeconds] = useState(getSeconsDiff());
 
   const handleMusic = () => {
@@ -41,7 +41,7 @@ const Home = () => {
         <h3 style={{ position: "absolute", display: "none" }}>FIX AUDIO</h3>
       )}
       <h1 style={{ textAlign: "center", marginBottom: "4rem" }}>
-        Bienvenida Puerca 🐽
+        Bienvenida Puerca?
       </h1>
 
       <Contador seconds={seconds} />
@@ -56,7 +56,7 @@ const Home = () => {
           router("/propuesta");
         }}
       >
-        {"Click Aqui :)"}
+        {"Click Aqui .."}
       </Button>
 
       <ModalForm handleMusic={handleMusic} />

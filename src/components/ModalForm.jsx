@@ -45,7 +45,7 @@ const ModalForm = ({ handleMusic }) => {
   };
 
   function handleClick() {
-    if (meses.length == 0 || fecha == null) {
+    /*  if (meses.length == 0 || fecha == null) {
       setError({
         message: "Ingresa las claves Puerca",
         tipo: "Alerta",
@@ -53,11 +53,16 @@ const ModalForm = ({ handleMusic }) => {
       });
       return;
     }
-
+ */
     setLoading(true);
 
     setTimeout(() => {
-      const fechaSelect = fecha.$d.toLocaleDateString("es-ES");
+      localStorage.setItem("completado", true);
+      handleModalBien(true);
+      handleMusic();
+      handleModalForm();
+
+      /*  const fechaSelect = fecha.$d.toLocaleDateString("es-ES");
 
       if (meses != 21 || fechaSelect != "2/12/2020") {
         setError({
@@ -70,7 +75,7 @@ const ModalForm = ({ handleMusic }) => {
         handleModalBien(true);
         handleMusic();
         handleModalForm();
-      }
+      } */
 
       setLoading(false);
     }, 1500);
@@ -80,12 +85,11 @@ const ModalForm = ({ handleMusic }) => {
     <>
       {modalBien && (
         <ModalAlert
+          wi
           message={
-            fixMusic
-              ? "Ya pusiste las claves puedes continuar."
-              : "Sabia que podrias"
+            fixMusic ? "........................." : "????????????????????????"
           }
-          tipo={fixMusic ? "Bienvenida" : "Muy bien"}
+          tipo={fixMusic ? "??" : ""}
           img="amor"
           handleMusic={handleMusic}
         />
@@ -107,8 +111,8 @@ const ModalForm = ({ handleMusic }) => {
         keepMounted
         aria-describedby="alert-dialog-slide-description"
       >
-        <DialogTitle>{"Ingrese las claves secretas :)"}</DialogTitle>
-        <DialogContent>
+        <DialogTitle>{" :))))))))))))))))))??"}</DialogTitle>
+        {/* <DialogContent>
           <TextField
             autoFocus
             margin="dense"
@@ -141,11 +145,11 @@ const ModalForm = ({ handleMusic }) => {
               )}
             />
           </LocalizationProvider>
-        </DialogContent>
+        </DialogContent> */}
         <DialogActions>
           {/* <Button>Verificar</Button> */}
           <LoadingButton onClick={handleClick} loading={loading}>
-            Verificar
+            OK
           </LoadingButton>
         </DialogActions>
       </Dialog>

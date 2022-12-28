@@ -43,34 +43,34 @@ const Contador = ({ seconds }) => {
       <div className="container-contador">
         <div className="contador-flex">
           <p className="anio-num">{dataDate.years}</p>
-          <p className="anio-text">año</p>
+          <p className="anio-text">año?</p>
         </div>
-        <p className="meses-container">{dataDate.months} meses</p>
+        <p className="meses-container">{dataDate.months} meses?</p>
       </div>
 
       <div className="contador-grid">
         <div className="animar-contador">
-          <p>Dias</p>
+          <p>Dias?</p>
           <span>{getDiffTime("d")}</span>
         </div>
 
         <div className="animar-contador">
-          <p>Horas</p>
+          <p>Horas?</p>
           <span>{getDiffTime("h")}</span>
         </div>
 
         <div className="animar-contador">
-          <p>Semanas</p>
+          <p>Semanas?</p>
           <span>{getDiffTime("w")}</span>
         </div>
 
         <div className="animar-contador">
-          <p>Meses</p>
+          <p>Meses?</p>
           <span>{getDiffTime("M")}</span>
         </div>
       </div>
 
-      <h3>Segundos Juntos ❤️</h3>
+      <h3>Segundos Juntos??</h3>
       {numberWithCommas(seconds)}
     </div>
   );

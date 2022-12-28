@@ -43,6 +43,7 @@
     border-radius: 10px;
     object-fit: cover;
     object-position: center;
+    filter: grayscale();
 }
 
 
